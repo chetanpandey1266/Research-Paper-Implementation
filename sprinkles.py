@@ -1,41 +1,47 @@
 from PIL import Image,ImageDraw
-import time
+import random
+from random import randrange
 
-
-class Sprikler(object):
+class Cutout:
     """
-    with the aspect of no distortion and looking from the same view
+    Input: a numpy array
+
+    Args:
+    p = probability of applying the augmentation
+
+    spotlight_radius: the length of square
+
+    spot_counts: how many squares to form if p = 1
+
+    img_dim: dimension of image on which it will be applied
+
+    Output: a numpy array
+
     """
 
-    reso_width = 0
-    reso_height = 0
-    radius = 10
-    def __init__(self,width,height,spotlight_radius= 10):
-        self.reso_width = width
-        self.reso_height = height
-        self.radius = spotlight_radius
 
-    def get_image_spotlight(self,set_points): #function for drawing spot light
-        image,draw = self.get_image()
-        for (x,y) in set_points:
-            draw.ellipse((x-self.radius,y-self.radius,x+self.radius,y+self.radius),fill = "black")
-        image.show("titel")
-        return image
+    def __init__(self, p, spotlight_radius=10, spot_counts = 100, img_dim = 256):
+        self.p = p
+        self.spotlight_radius = spotlight_radius
+        self.spot_counts = spot_counts
+        self.img_dim = img_dim
 
-    def get_image(self):   #function for drawing black image
-        image = Image.open("./flowers.jpeg")#(ImageHandler.reso_width,ImageHandler.reso_height),"black")
-        draw = ImageDraw.Draw((image))
-        return image,draw
+    def get_draw(self, img):
+        draw = ImageDraw.Draw((img))
+        return draw
 
 
-
-from random import randrange 
-
-
-
-
-if __name__ == "__main__":
-    hi = Sprikler(240, 240)
-    spot_count= 15
-    points = [(randrange(240), randrange(240)) for _ in range(spot_count)]
-    img = hi.get_image_spotlight(points)
+    def __call__(self, img):
+        img = Image.fromarray(img)
+        img = img.convert('RGB')   # just to ensure that the image has only three channels
+        set_points = [(randrange(self.img_dim), randrange(self.img_dim)) for _ in range(self.spot_counts)]
+        draw = self.get_draw(img)
+        
+        if random.random() < self.p:
+            for (x, y) in set_points:
+                draw.rectangle((x-self.spotlight_radius, y-self.spotlight_radius, x+self.spotlight_radius, y+self.spotlight_radius), fill = "black")
+            img = np.array(img)
+            return img
+        else:
+            img = np.array(img)
+            return img
