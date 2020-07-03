@@ -38,9 +38,9 @@ class Smart:
 
 
 if __name__ == "__main__":
-    img1 = Image.open(r"/home/chetan/CyberLabs/ImageAug/flowers.jpeg")
+    img1 = Image.open(r"img1_path")
     img1 = img1.resize((300, 300))
-    img2 = Image.open(r"/home/chetan/CyberLabs/ImageAug/myavatar.jpeg")
+    img2 = Image.open(r"img2_path")
     img2 = img2.resize((300, 300))
     img1 = np.asarray(img1)
     img2 = np.asarray(img2)
