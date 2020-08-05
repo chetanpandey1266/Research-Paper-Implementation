@@ -15,3 +15,7 @@
 References for implementation:
 [Blog](https://medium.com/activating-robotic-minds/up-sampling-with-transposed-convolution-9ae4f2df52d0)
 [Video](https://www.youtube.com/watch?v=u1loyDCoGbE)
+
+### Rethinking the value of network pruning
+[Summary]()
+[Paper](https://arxiv.org/abs/1810.05270)
