@@ -17,5 +17,5 @@ References for implementation:
 [Video](https://www.youtube.com/watch?v=u1loyDCoGbE)
 
 ### Rethinking the value of network pruning
-[Summary]()
+[Summary](https://github.com/chetanpandey1266/Research-Paper-Implementation/blob/master/Rethinking%20the%20Value%20of%20Network%20Pruning.pdf)
 [Paper](https://arxiv.org/abs/1810.05270)
