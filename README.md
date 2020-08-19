@@ -19,3 +19,7 @@ References for implementation:
 ### Rethinking the value of network pruning
 [Summary](https://github.com/chetanpandey1266/Research-Paper-Implementation/blob/master/Rethinking%20the%20Value%20of%20Network%20Pruning.pdf)
 [Paper](https://arxiv.org/abs/1810.05270)
+
+### Fixing the train-test resolution discrepancy
+[Summary](https://github.com/chetanpandey1266/Research-Paper-Implementation/blob/master/Fixing%20the%20train-test%20resolution%20Discrepancy.pdf)
+[Paper](https://arxiv.org/pdf/1906.06423.pdf)
