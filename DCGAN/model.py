@@ -2,11 +2,6 @@ import torch
 import torch.nn as nn
 
 class Discriminator(nn.Module):
-    """
-    channels_img: number of channels in the input image
-
-    features_d: a type of hyperparameter
-    """
     def __init__(self, channels_img, features_d): 
         super(Discriminator, self).__init__()
         # LeakyReLU and BatchNorm is added so as to make the training of GAN stable
