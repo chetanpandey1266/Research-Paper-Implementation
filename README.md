@@ -23,3 +23,7 @@ References for implementation:
 ### Fixing the train-test resolution discrepancy
 [Summary](https://github.com/chetanpandey1266/Research-Paper-Implementation/blob/master/Fixing%20the%20train-test%20resolution%20Discrepancy.pdf)
 [Paper](https://arxiv.org/pdf/1906.06423.pdf)
+
+## Deep Convolutional GAN
+[Implementation](https://github.com/chetanpandey1266/Research-Paper-Implementation/tree/master/DCGAN/)
+[Paper](https://arxiv.org/abs/1511.06434)
